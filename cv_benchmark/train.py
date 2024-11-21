@@ -34,7 +34,7 @@ def get_config():
     """
     Saving & loading of the model.
     """
-    parser.add_argument("--save_dir", type=str, default="/mnt/bn/liyullm2/liyussl/saved_models")
+    parser.add_argument("--save_dir", type=str, default="/saved_models")
     parser.add_argument("-sn", "--save_name", type=str, default="fixmatch")
     parser.add_argument("--resume", action="store_true")
     parser.add_argument("--load_path", type=str)
