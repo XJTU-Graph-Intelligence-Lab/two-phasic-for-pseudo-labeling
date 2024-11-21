@@ -1,7 +1,7 @@
 
 # Non-Stationary Predictions May Be More Informative: Exploring Pseudo-Labels with a Two-Phase Pattern of Training Dynamics
 
-The implementation of all CV benchmarks is based on [USB](https://github.com/microsoft/Semi-supervised-learning.git). It is a Pytorch-based Python package for Semi-Supervised Learning (SSL). You can find the specific running commands in the **"Reproduce CV Benchmark Results"** section.
+The implementation of all CV benchmarks is based on [USB](https://github.com/microsoft/Semi-supervised-learning.git). It is a Pytorch-based Python package for Semi-Supervised Learning (SSL). You can find the specific running commands in the **Reproduce Booster Experiments** section.
 
 
 ## Getting Started
@@ -27,16 +27,22 @@ pip install -r requirements.txt
 
 The detailed instructions for downloading and processing are shown in [Dataset Download](./preprocess/). Please follow it to download datasets before running or developing algorithms.
 
-### reproduce cv benchmark results
+### Reproduce Booster Experiments
 
 Here is an example to train Two-phase base on Pseudolabel in CIFAR-100 Dataset with 200 labels. Training other supported algorithms (on other datasets with different label settings) can be specified by a config file:
 
 - Step1: Training base model
-```
+```python
 python train.py --c config/two_phase/pseudolabel/cifar_base200.yaml
 ```
 - Step2: Continue training two-phase 
-```
+```python
 python train.py --c config/two_phase/pseudolabel/cifar_tp200.yaml
 ```
 
+### Reproduce Quality of 2-phase Labels Experiments
+After saving the trained checkpoint in the booster experiments, you can reproduce all the experiments from Section 5.3 of the paper using the following command.
+
+```python
+python case_study.py --load_path [path to checkpoint] --tp_load_path [path to two-phase checkpoint] --data_dir [path to data]
+```
