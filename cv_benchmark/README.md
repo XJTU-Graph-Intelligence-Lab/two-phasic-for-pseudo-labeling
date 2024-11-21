@@ -22,14 +22,10 @@ then use pip to install required packages:
 ```sh
 pip install -r requirements.txt
 ```
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 
 ### Prepare Datasets
 
 The detailed instructions for downloading and processing are shown in [Dataset Download](./preprocess/). Please follow it to download datasets before running or developing algorithms.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 ### reproduce cv benchmark results
 
