@@ -1,0 +1,16 @@
+matplotlib>=3.5.2
+numpy>=1.24.4
+Pillow>=9.0.0
+progress>=1.6
+ruamel.yaml==0.17.21
+ruamel.yaml.clib==0.2.6
+scikit-image>=0.19.3
+scikit-learn>=1.0.2
+scipy>=1.10.0
+tensorboard>=2.9.1
+timm==0.5.4
+transformers==4.30.0
+aim
+plotly
+optuna
+kaleido
