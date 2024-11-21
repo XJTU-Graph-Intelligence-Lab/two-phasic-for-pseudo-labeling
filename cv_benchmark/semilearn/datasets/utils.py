@@ -11,8 +11,6 @@ from io import BytesIO
 
 # TODO: better way
 
-# base_dir = "/mnt/bn/liyullm2/USB"
-
 
 def split_ssl_data(args, data, targets, num_classes,
                    lb_num_labels, ulb_num_labels=None,
