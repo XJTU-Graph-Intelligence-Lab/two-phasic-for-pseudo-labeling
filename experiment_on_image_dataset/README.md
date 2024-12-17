@@ -50,7 +50,7 @@ To demonstrate that our method remains effective under the default settings prov
 | Dataset    | Cifar100 | Cifar100 |
 | ---------- | :------: | :------: |
 | # Label    |   200    |   400    |
-| Confidence |  66.84   |   74.68  |
+| Confidence |  66.84   |   75.38  |
 | +2-phasic  |  68.24   |   77.95  |
 
 [1] Wang, Y., Chen, H., Fan, Y., Sun, W., Tao, R., Hou, W., ... & Zhang, Y. (2022). Usb: A unified semi-supervised learning benchmark for classification. Advances in Neural Information Processing Systems, 35, 3938-3961.
