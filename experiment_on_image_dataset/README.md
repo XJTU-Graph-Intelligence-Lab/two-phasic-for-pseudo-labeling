@@ -41,3 +41,16 @@ After saving the trained checkpoint in the booster experiments, you can reproduc
 ```python
 python case_study.py --load_path [path to checkpoint] --tp_load_path [path to two-phase checkpoint] --data_dir [path to data]
 ```
+
+## Additional Experimental Results in Appendix E.4
+In our experiments in Table 1, we did not train for 200 epochs in stage 3 as specified in [1]. Instead, we conducted 6 epochs, during which both trials underwent the same number of training rounds and successfully converged.
+
+To demonstrate that our method remains effective under the default settings provided in [1], we conducted this additional experiment. The results are summarized in the table below.
+
+| Dataset    | Cifar100 | Cifar100 |
+| ---------- | :------: | :------: |
+| # Label    |   200    |   400    |
+| Confidence |  66.84   |   74.68  |
+| +2-phasic  |  68.24   |   77.95  |
+
+[1] Wang, Y., Chen, H., Fan, Y., Sun, W., Tao, R., Hou, W., ... & Zhang, Y. (2022). Usb: A unified semi-supervised learning benchmark for classification. Advances in Neural Information Processing Systems, 35, 3938-3961.
