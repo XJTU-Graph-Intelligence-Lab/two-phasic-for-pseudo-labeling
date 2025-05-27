@@ -1,7 +1,7 @@
 
 # Non-Stationary Predictions May Be More Informative: Exploring Pseudo-Labels with a Two-Phase Pattern of Training Dynamics
 
-This code repository is intended to reproduce all the experiments described in Sections 5.2 and 5.3 of the paper on the **image** dataset.
+This code repository is intended to reproduce all the experiments described in Sections 5.1 and 5.2 of the paper on the **image** dataset.
 
 ## Prerequisites
 
