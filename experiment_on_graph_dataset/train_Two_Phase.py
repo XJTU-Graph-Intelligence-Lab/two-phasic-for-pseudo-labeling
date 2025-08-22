@@ -204,7 +204,7 @@ def main_train(args, trial):
     results_dict['tp_pseudo_acc_mean'] = tp_pse_acc[~th.isnan(tp_pse_acc)].mean().item()
     results_dict['tp_pseudo_num'] = tp_pseudo_num
     results_dict['total_time'] = time.time() - time_now
-    with open(osp.join(path_root, f'{args.name}_{args.dataset}_{args.train_size}_'
+    with open(osp.join(path_root, 'final_runs', f'{args.name}_{args.dataset}_{args.train_size}_'
                                    f'{args.run_id}_results.json'), 'a') as outfile:
         json.dump(results_dict, outfile, indent=4)
     return results_dict['test_acc_mean']
@@ -228,7 +228,7 @@ def set_search_space(trial):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--model', type=str, default='GCN')
-    parser.add_argument('--name', type=str, default='st')
+    parser.add_argument('--name', type=str, default='modis') # modis aum st
     parser.add_argument('--dataset', type=str, default='cora')
     parser.add_argument('--num_hidden', type=int, default=64)
     parser.add_argument('--num_layers', type=int, default=2)
@@ -265,5 +265,12 @@ if __name__ == '__main__':
     study.optimize(set_search_space, n_trials=20)
     beat_res = study.best_params
     beat_res['value'] = study.best_value
-    with open(osp.join(path_root, f'{args.name}_{args.dataset}_{args.train_size}_{args.run_id}_results.json'), 'a') as outfile:
+    with open(osp.join(path_root, 'final_runs', f'{args.name}', f'{args.name}_{args.dataset}_{args.train_size}_{args.run_id}_results1.json'), 'a') as outfile:
         json.dump(beat_res, outfile, indent=4)
+    for trial in study.trials:
+        res = {}
+        res['number'] = trial.number    
+        res['params'] = trial.params
+        res['value'] = trial.value
+        with open(osp.join(path_root, 'final_runs', f'{args.name}', f'{args.name}_{args.dataset}_{args.train_size}_{args.run_id}_results1.json'), 'a') as outfile:
+            json.dump(res, outfile, indent=4)
